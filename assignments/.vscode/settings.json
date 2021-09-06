@@ -1,0 +1,6 @@
+{
+  "html.format.wrapLineLength": 150,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  }
+}
