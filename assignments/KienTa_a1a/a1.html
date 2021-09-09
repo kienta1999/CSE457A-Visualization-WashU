@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>CSE457 Assignment 1A</h1>
+    <p>Name: Kien Ta</p>
+    <p>Email: k.l.ta@wustl.edu</p>
+    <p>ID: 488494</p>
+    <h1>Bar Chart</h1>
+    <svg width="1400" height="550">
+      <!-- X dimension - multiply original value by 50-->
+      <rect x="0" y="0" width="500" height="50" class="bar" />
+      <rect x="0" y="50" width="400" height="50" class="bar" />
+      <rect x="0" y="100" width="650" height="50" class="bar" />
+      <rect x="0" y="150" width="450" height="50" class="bar" />
+      <rect x="0" y="200" width="550" height="50" class="bar" />
+      <rect x="0" y="250" width="700" height="50" class="bar" />
+      <rect x="0" y="300" width="300" height="50" class="bar" />
+      <rect x="0" y="350" width="200" height="50" class="bar" />
+      <rect x="0" y="400" width="600" height="50" class="bar" />
+      <rect x="0" y="450" width="350" height="50" class="bar" />
+      <rect x="0" y="500" width="250" height="50" class="bar" />
+      <!-- Y dimension multiply original value by 50 -->
+      <rect x="800" y="0" width="402" height="50" class="bar" />
+      <rect x="800" y="50" width="347.5" height="50" class="bar" />
+      <rect x="800" y="100" width="379" height="50" class="bar" />
+      <rect x="800" y="150" width="440.5" height="50" class="bar" />
+      <rect x="800" y="200" width="416.5" height="50" class="bar" />
+      <rect x="800" y="250" width="498" height="50" class="bar" />
+      <rect x="800" y="300" width="362" height="50" class="bar" />
+      <rect x="800" y="350" width="213" height="50" class="bar" />
+      <rect x="800" y="400" width="540" height="50" class="bar" />
+      <rect x="800" y="450" width="241" height="50" class="bar" />
+      <rect x="800" y="500" width="284" height="50" class="bar" />
+    </svg>
+
+    <h1>Line Chart</h1>
+    <svg width="1400" height="500">
+      <!-- X dimension - (50 * i, height - x * 30)-->
+      <line x1="0" y1="200" x2="50" y2="260" class="line" />
+      <line x1="50" y1="260" x2="100" y2="110" class="line" />
+      <line x1="100" y1="110" x2="150" y2="230" class="line" />
+      <line x1="150" y1="230" x2="200" y2="170" class="line" />
+      <line x1="200" y1="170" x2="250" y2="80" class="line" />
+      <line x1="250" y1="80" x2="300" y2="320" class="line" />
+      <line x1="300" y1="320" x2="350" y2="380" class="line" />
+      <line x1="350" y1="380" x2="400" y2="140" class="line" />
+      <line x1="400" y1="140" x2="450" y2="290" class="line" />
+      <line x1="450" y1="290" x2="500" y2="350" class="line" />
+      <!-- Y dimension - (50 * i + 800, height - y * 30 )-->
+      <line x1="800" y1="258.8" x2="850" y2="291.5" class="line" />
+      <line x1="850" y1="291.5" x2="900" y2="272.6" class="line" />
+      <line x1="900" y1="272.6" x2="950" y2="235.7" class="line" />
+      <line x1="950" y1="235.7" x2="1000" y2="250.1" class="line" />
+      <line x1="1000" y1="250.1" x2="1050" y2="201.2" class="line" />
+      <line x1="1050" y1="201.2" x2="1100" y2="282.8" class="line" />
+      <line x1="1100" y1="282.8" x2="1150" y2="372.2" class="line" />
+      <line x1="1150" y1="372.2" x2="1200" y2="174.8" class="line" />
+      <line x1="1200" y1="174.8" x2="1250" y2="355.4" class="line" />
+      <line x1="1250" y1="355.4" x2="1300" y2="329.6" class="line" />
+    </svg>
+
+    <h1>Area Chart</h1>
+    <svg width="1400" height="500">
+      <!-- X -->
+      <polyline
+        class="area"
+        points="
+            0,500
+            0,200
+            50,260
+            100,110
+            150,230
+            200,170
+            250,80
+            300,320
+            350,380
+            400,140
+            450,290
+            500,350
+            500,500"
+      />
+      <!-- Y -->
+      <polyline
+        class="area"
+        points="
+            800,500
+            800,258.8
+            850,291.5
+            900,272.6
+            950,235.7
+            1000,250.1
+            1050,201.2
+            1100,282.8
+            1150,372.2
+            1200,174.8
+            1250,355.4
+            1300,329.6
+            1300,500"
+      />
+    </svg>
+
+    <h1>Scatterplot</h1>
+    <svg width="550" height="500">
+      <!-- (35 * x, 500 - 35 * y) -->
+      <rect x="0" y="0" width="550" height="500" />
+      <circle cx="350" cy="218.6" r="10" class="scatter" />
+      <circle cx="280" cy="256.75" r="10" class="scatter" />
+      <circle cx="455" cy="234.7" r="10" class="scatter" />
+      <circle cx="315" cy="191.65" r="10" class="scatter" />
+      <circle cx="385" cy="208.45" r="10" class="scatter" />
+      <circle cx="490" cy="151.4" r="10" class="scatter" />
+      <circle cx="210" cy="246.6" r="10" class="scatter" />
+      <circle cx="140" cy="350.9" r="10" class="scatter" />
+      <circle cx="420" cy="120.6" r="10" class="scatter" />
+      <circle cx="245" cy="331.3" r="10" class="scatter" />
+      <circle cx="175" cy="301.2" r="10" class="scatter" />
+    </svg>
+  </body>
+</html>
