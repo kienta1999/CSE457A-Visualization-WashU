@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 1B</title>
+    <style>
+        .barChart {
+            fill: steelblue;
+            stroke: darkgray;
+            stroke-width: 1px;
+        }
+
+        .barChart rect:hover {
+            fill: seagreen;
+        }
+
+        .lines {
+            stroke: steelblue;
+            fill: none
+        }
+
+        .areas {
+            stroke: none;
+            fill: steelblue
+        }
+
+        circle {
+            fill: steelblue;
+        }
+
+        .frame {
+            fill: none;
+            stroke: black;
+            stroke-width: 2px;
+        }
+
+        /* Styles that clean up the layout;
+         * you can ignore these */
+        div {
+            display: inline-block;
+            border: 1px solid lightgray;
+            margin: 1em;
+        }
+
+        div,
+        span {
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+
+        <h3>CSE 457 Assignment 1B</h3>
+        <span>Name: Kien Ta</span>
+        <span>Email Address: k.l.ta@wustl.edu</span>
+        <span>Id: 488494</span>
+
+        <br />
+        <hr />
+        <br />
+
+        <span>
+            <button onclick="staircase()">Staircase</button>
+        </span>
+
+        <span>
+            <label>Dataset:</label>
+            <select id="dataset" onchange="changeData()">
+                <option value="anscombe_I">Anscombe's Quartet I</option>
+                <option selected value="anscombe_II">Anscombe's Quartet II</option>
+                <option value="anscombe_III">Anscombe's Quartet III</option>
+                <option value="anscombe_IV">Anscombe's Quartet IV</option>
+            </select>
+        </span>
+
+        <span>
+            <input type="checkbox" id="random" onchange="randomSubset()"> Random Subset
+        </span>
+
+        <br />
+
+        <div>
+            <h2>Bar Charts</h2>
+            <svg width="200" height="200" class="barChart" id="barChartA">
+                <!-- Paste your Part A solution here -->
+                <rect x="0" y="0" width="100" height="15" />
+                <rect x="0" y="15" width="80" height="15" />
+                <rect x="0" y="30" width="130" height="15" />
+                <rect x="0" y="45" width="90" height="15" />
+                <rect x="0" y="60" width="110" height="15" />
+                <rect x="0" y="75" width="140" height="15" />
+                <rect x="0" y="90" width="60" height="15" />
+                <rect x="0" y="105" width="40" height="15" />
+                <rect x="0" y="120" width="120" height="15" />
+                <rect x="0" y="135" width="70" height="15" />
+                <rect x="0" y="150" width="50" height="15" />
+            </svg>
+
+            <svg width="200" height="200" class="barChart" id="barChartB">
+                <!-- Paste your Part A solution here -->
+                <rect x="0" y="0" width="80.4" height="15" />
+                <rect x="0" y="15" width="69.5" height="15" />
+                <rect x="0" y="30" width="75.8" height="15" />
+                <rect x="0" y="45" width="88.1" height="15" />
+                <rect x="0" y="60" width="83.3" height="15" />
+                <rect x="0" y="75" width="99.6" height="15" />
+                <rect x="0" y="90" width="72.4" height="15" />
+                <rect x="0" y="105" width="42.6" height="15" />
+                <rect x="0" y="120" width="108.4" height="15" />
+                <rect x="0" y="135" width="48.2" height="15" />
+                <rect x="0" y="150" width="56.8" height="15" />
+            </svg>
+        </div>
+
+        <div>
+            <h2>Line Charts</h2>
+
+            <svg width="200" height="200" class="lines" id="lineA">
+                <!-- Paste your Part A solution here -->
+                      <polyline
+                        points="
+                            0,100
+                            15,120
+                            30,70
+                            45,110
+                            60,90
+                            75,60
+                            90,140
+                            105,160
+                            120,80
+                            135,130
+                            150,150
+                        "
+                    />
+            </svg>
+
+            <svg width="200" height="200" class="lines" id="lineB">
+                <!-- Paste your Part A solution here -->
+                      <polyline
+                        points="
+                        0,119.6
+                        15,130.5
+                        30,124.2
+                        45,111.9
+                        60,116.7
+                        75,100.4
+                        90,127.6
+                        105,157.4
+                        120,91.6
+                        135,151.8
+                        150,143.2
+                        "
+                    />
+            </svg>
+        </div>
+
+        <div>
+            <h2>Area Charts</h2>
+
+            <svg width="200" height="200" class="areas" id="areaA">
+                <!-- Paste your Part A solution here -->
+                    <polyline
+                        points="
+                            0,200
+                            0,100
+                            15,120
+                            30,70
+                            45,110
+                            60,90
+                            75,60
+                            90,140
+                            105,160
+                            120,80
+                            135,130
+                            150,150
+                            150,200
+                        "
+                    />
+            </svg>
+
+            <svg width="200" height="200" class="areas" id="areaB">
+                <!-- Paste your Part A solution here -->
+                <polyline
+                    points="
+                    0,200
+                    0,119.6
+                    15,130.5
+                    30,124.2
+                    45,111.9
+                    60,116.7
+                    75,100.4
+                    90,127.6
+                    105,157.4
+                    120,91.6
+                    135,151.8
+                    150,143.2
+                    150,200
+                    "
+                />
+            </svg>
+        </div>
+
+        <div>
+            <h2>Scatterplot</h2>
+
+            <svg width="200" height="200" id="scatter">
+                <!-- Paste your Part A solution here -->
+                <circle cx="100" cy="119.6" r="4"/>
+                <circle cx="80" cy="130.5" r="4"/>
+                <circle cx="130" cy="124.2" r="4"/>
+                <circle cx="90" cy="111.9" r="4"/>
+                <circle cx="110" cy="116.7" r="4"/>
+                <circle cx="140" cy="100.4" r="4"/>
+                <circle cx="60" cy="127.6" r="4"/>
+                <circle cx="40" cy="157.4" r="4"/>
+                <circle cx="120" cy="91.6" r="4"/>
+                <circle cx="70" cy="151.8" r="4"/>
+                <circle cx="50" cy="143.2" r="4"/>
+            </svg>
+        </div>
+    </body>
+    <footer>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </footer>
+
+</html>
