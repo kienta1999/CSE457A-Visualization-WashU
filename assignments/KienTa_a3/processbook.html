@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Process Book</title>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h2>What do you want to achieve with the visualization?</h2>
+        <p>
+          As you can see, there are a lot of stories from the dataset, and
+          reading all of them can be tiresome. So, my visualization aims to give
+          user a summary of each story - to have an idea of what the story is
+          talking about, without having to read the whole story. Thus, the text
+          data would be easier to understand. Moreover, I want user to be able
+          to compare between stories: for example, what are the common and
+          different points between the stories. The hidden features within each
+          story would be exposed to the user - so I am hoping for them to see
+          something that cannot be seen through the plain text.
+        </p>
+        <hr />
+
+        <h2>What tasks do you want to support?</h2>
+        <p>I want to support the following task:</p>
+        <p>
+          Word frequency visualization: create visualizations that help user
+          identify the frequency of the word. User should be able to see what
+          words are frequently appear in each story.
+        </p>
+        <p>
+          I also want to be able to compare between stories to see the
+          similarity between them. For example, user would be able to select a
+          story and see the 10 most common stories visualized with score and
+          graph.
+        </p>
+        <hr />
+
+        <h2>What designs will help you accomplish these? Name at least two</h2>
+        <p>
+          For word frequency, I will use Word Clouds / Wordle to draw word
+          chart. The bigger the word, the higher frequency it is
+        </p>
+        <p>
+          For stories comparision, I will calculate the cosine similarity score
+          between them (consider each story as a vector and calculate similarity
+          score between stories). Then, I get the most common stories with
+          respect to a story and visualize it
+        </p>
+        <hr />
+
+        <h2>Sketches</h2>
+        <img src="sketches/word_cloud.PNG" alt="word_cloud" width="50%" />
+        <h5>Sketches for Word Clouds example, TOM TIT TOT</h5>
+        <hr />
+        <img
+          src="sketches/similarity_score.PNG"
+          alt="similarity_score"
+          width="50%"
+        />
+        <h5>Sketches for similarity score example</h5>
+        <hr />
+
+        <h2>A justification for the final design</h2>
+        <p>I choose ......................</p>
+      </div>
+    </div>
+  </body>
+</html>
