@@ -7,7 +7,9 @@ def string_preprocess(input_str):
     punctuations = '''!()-[]{};:'"”“\,<>./?@#$%^&*_~\n'''
     ans = ""
     for char in input_str:
-        if char not in punctuations:
+        if char == '\u2014':
+            ans += ' '
+        elif char not in punctuations:
             ans += char
     return ans.lower().strip()
 
@@ -16,7 +18,7 @@ def str_to_freq(str):
     counter = Counter(str.split())
     ans = []
     for word in counter:
-        ans.append({'word': word, 'counter': counter[word]})
+        ans.append({'word': word, 'frequency': counter[word]})
     return ans
 
 
