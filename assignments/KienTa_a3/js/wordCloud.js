@@ -5,6 +5,7 @@ class WordCloud {
   }
 
   update(data) {
+    console.log("update");
     this.svg = d3
       .select("#word-cloud")
       .html("")

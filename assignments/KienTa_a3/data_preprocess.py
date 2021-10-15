@@ -6,9 +6,9 @@ from bs4 import BeautifulSoup
 from collections import Counter
 import json
 import nltk
-# nltk.download('stopwords')
-# nltk.download('wordnet')
-# nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('punkt')
 wnl = WordNetLemmatizer()
 
 
