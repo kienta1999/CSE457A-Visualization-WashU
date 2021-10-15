@@ -14,16 +14,16 @@
   const similarStories = new SimilarStories();
   const update = (
     wordCloudUpdated,
-    similarStoriesUdated,
+    similarStoriesUpdated,
     originalStoryUpdated
   ) => {
     const selectedStory = dropdown.node().value;
     const selectedData = data.find((d) => d.title === selectedStory);
     wordCloudUpdated && wordCloud.update(selectedData);
-    similarStoriesUdated &&
+    similarStoriesUpdated &&
       similarStories.update(
         selectedData,
-        +d3.select("#count").attr("value") || 10
+        +document.getElementById("count").value || 10
       );
     originalStoryUpdated &&
       d3.select("#original-story").html(selectedData.html);
