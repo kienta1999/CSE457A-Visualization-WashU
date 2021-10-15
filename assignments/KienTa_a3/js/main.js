@@ -12,21 +12,29 @@
 
   const wordCloud = new WordCloud();
   const similarStories = new SimilarStories();
+  const update = (
+    wordCloudUpdated,
+    similarStoriesUdated,
+    originalStoryUpdated
+  ) => {
+    const selectedStory = dropdown.node().value;
+    const selectedData = data.find((d) => d.title === selectedStory);
+    wordCloudUpdated && wordCloud.update(selectedData);
+    similarStoriesUdated &&
+      similarStories.update(
+        selectedData,
+        +d3.select("#count").attr("value") || 10
+      );
+    originalStoryUpdated &&
+      d3.select("#original-story").html(selectedData.html);
+  };
+
+  update(true, true, true);
 
   dropdown.on("change", (event) => {
-    const selectedStory = dropdown.node().value;
-    const selectedData = data.find((d) => d.title === selectedStory);
-    similarStories.update(
-      selectedData,
-      +d3.select("#count").attr("value") || 10
-    );
-    d3.select("#original-story").html(selectedData.html);
-    wordCloud.update(selectedData);
+    update(true, true, true);
   });
   d3.select("#count").on("input", (event) => {
-    const count = event.target.value;
-    const selectedStory = dropdown.node().value;
-    const selectedData = data.find((d) => d.title === selectedStory);
-    similarStories.update(selectedData, +count || 10);
+    update(false, true, false);
   });
 })();

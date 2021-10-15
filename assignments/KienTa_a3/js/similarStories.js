@@ -18,7 +18,7 @@ class SimilarStories {
     const similarityScore = data.similarity_score
       .sort((d1, d2) => -d1.score + d2.score)
       .slice(0, count);
-    // const margin =
+    console.log(similarityScore);
     const yScale = d3.scaleLinear().range([this.height, 0]);
   }
 }
