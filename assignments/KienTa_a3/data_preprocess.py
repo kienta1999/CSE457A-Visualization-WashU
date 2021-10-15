@@ -62,11 +62,12 @@ title_and_content = []
 for i, h2 in enumerate(all_h2):
     if i < len(all_h2) - 1:
         next_h2 = all_h2[i + 1]
-        obj = {'title': h2.get_text().strip(), 'original_content': ''}
+        obj = {'title': h2.get_text().strip(), 'original_content': '', 'html': ''}
         itr = h2
         while itr != next_h2:
             itr = itr.next_sibling
             if itr.name == 'p':
+                obj['html'] += f'<p>{itr.get_text()}</p>'
                 obj['original_content'] += string_preprocess(itr.get_text())
         title_and_content.append(obj)
 for element in title_and_content:
