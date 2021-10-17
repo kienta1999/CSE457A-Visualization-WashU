@@ -19,13 +19,14 @@
         <p>
           As you can see, there are a lot of stories from the dataset, and
           reading all of them can be tiresome. So, my visualization aims to give
-          user a summary of each story - to have an idea of what the story is
-          talking about, without having to read the whole story. Thus, the text
-          data would be easier to understand. Moreover, I want user to be able
-          to compare between stories: for example, what are the common and
-          different points between the stories. The hidden features within each
-          story would be exposed to the user - so I am hoping for them to see
-          something that cannot be seen through the plain text.
+          user an overview of each story - to have a general idea of what the
+          story is talking about, without having to read the whole story. Thus,
+          the text data would be easier to understand. Moreover, I want user to
+          be able to compare between stories: for example, what are the common
+          points between the stories. The similarity scores between stories in
+          combination with word count would be exposed to the user - so I am
+          hoping for them to see something that cannot be seen through the plain
+          text.
         </p>
         <hr />
 
@@ -46,8 +47,9 @@
 
         <h2>What designs will help you accomplish these? Name at least two</h2>
         <p>
-          For word frequency, I will use Word Clouds / Wordle to draw word
-          chart. The bigger the word, the higher frequency it is
+          For word frequency, I will use Word Clouds / Wordle and an 1D chart to
+          visualize how often the word appears. The bigger the word (and the
+          bigger the circle, the darker the color), the higher frequency it is
         </p>
         <p>
           For stories comparision, I will calculate the cosine similarity score
@@ -58,19 +60,26 @@
         <hr />
 
         <h2>Sketches</h2>
-        <img src="sketches/word_cloud.PNG" alt="word_cloud" width="50%" />
-        <h5>Sketches for Word Clouds example, TOM TIT TOT</h5>
-        <hr />
-        <img
-          src="sketches/similarity_score.PNG"
-          alt="similarity_score"
-          width="50%"
-        />
-        <h5>Sketches for similarity score example</h5>
+        <img src="image/sketch.jpg" alt="sketch" />
         <hr />
 
         <h2>A justification for the final design</h2>
-        <p>I choose ......................</p>
+        <p>
+          I choose wordle and the 1d chart to visualize text frequency because
+          while Wordle helps user to see the words that appears frequently in an
+          visually appealing way, the 1D map helps us actually see how often the
+          word show up (I also implement a tooltip to see the actual value). The
+          visualization will help user see the frequency of the word and thus
+          grasp the general idea of the story
+        </p>
+
+        <p>
+          I choose bar chart to visualize the top most similar stories to a
+          specific story because the bar chart correctly refect the magnitude of
+          the similarity score. By looking at the chart, user will be able to
+          see which story is most similar to another, and also which story is
+          different from another.
+        </p>
       </div>
     </div>
   </body>

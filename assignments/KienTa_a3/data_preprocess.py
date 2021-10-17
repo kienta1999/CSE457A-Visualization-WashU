@@ -81,6 +81,6 @@ for element in title_and_content:
                 element['word_frequency'], element2['word_frequency'])
             element['similarity_score'].append(
                 {'title': element2["title"], 'score': score})
-f = open("processed_englishfairytales.json", "w")
+f = open("processed_englishfairytales_copy.json", "w")
 f.write(json.dumps(title_and_content))
 f.close()

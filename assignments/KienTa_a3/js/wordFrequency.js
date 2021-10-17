@@ -1,10 +1,9 @@
 class WordFrequency {
-  constructor(data) {
+  constructor() {
     this.width = 500;
     this.height = 500;
     this.heightWC = 160;
     this.widthtWC = 1000;
-    this.allData = data;
   }
 
   updateWordCloud(data) {
@@ -128,7 +127,6 @@ class WordFrequency {
         const ranking = frequencies.findIndex(
           (d) => d.word == selectedData.word
         );
-        console.log(vis.allData);
         d3.select("#tootip").html(
           `<p>Selected Word: ${selectedData.word}</p><p>Frequency: ${
             selectedData.frequency
