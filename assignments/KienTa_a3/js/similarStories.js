@@ -21,7 +21,6 @@ class SimilarStories {
     const similarityScore = data.similarity_score
       .sort((d1, d2) => -d1.score + d2.score)
       .slice(0, this.count);
-    console.log(similarityScore);
     // color scale
     var colors = d3
       .scaleLinear()

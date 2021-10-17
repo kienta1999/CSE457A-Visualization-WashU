@@ -4,32 +4,45 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>CSE457: Assignment 3</title>
   </head>
   <body>
-    <h1>Fairy tales visualization</h1>
-    <p class="info">Name: Kien Ta; E-Mail: k.l.ta@wustl.edu; UID: 488494</p>
-    <!-- <div id="year-chart" class="view"></div> -->
-    <label for="story">Choose a story:</label>
+    <div class="container">
+      <h1>Fairy tales visualization</h1>
+      <p class="info">Name: Kien Ta; E-Mail: k.l.ta@wustl.edu; UID: 488494</p>
+      <br />
+      <label for="story">Choose a story:</label>
 
-    <select name="story" id="story"></select>
-    <h3>Word Frequency</h3>
-    <div id="word-cloud"></div>
-    <h3>Similar stories</h3>
-    <label for="count">How many stories you want:</label>
-    <input type="text" name="count" id="count" />
-    <br />
-    <div id="similar-stories"></div>
+      <select name="story" id="story"></select>
 
-    <h3>Original Story</h3>
-    <div id="original-story"></div>
+      <h3>Similar stories</h3>
+      <label for="count">How many stories you want:</label>
+      <input type="text" name="count" id="count" />
+      <br />
+      <div class="col-sm"><div id="similar-stories"></div></div>
+
+      <h3>Word Frequency</h3>
+      <div class="row">
+        <div class="col-sm"><div id="word-cloud"></div></div>
+        <div class="col-sm"><div id="word-count"></div></div>
+      </div>
+
+      <h3>Original Story</h3>
+      <div id="original-story"></div>
+    </div>
 
     <footer>
       <script src="https://d3js.org/d3.v6.min.js"></script>
       <!-- <script src="https://github.com/jasondavies/d3-cloud/blob/master/build/d3.layout.cloud.js"></script> -->
       <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
-      <script src="js/wordCloud.js"></script>
+      <script src="js/wordFrequency.js"></script>
       <script src="js/similarStories.js"></script>
       <script src="js/main.js"></script>
     </footer>

@@ -10,16 +10,16 @@
     .attr("value", (d) => d.title)
     .html((d) => d.title);
 
-  const wordCloud = new WordCloud();
+  const wordFrequency = new WordFrequency();
   const similarStories = new SimilarStories();
   const update = (
-    wordCloudUpdated,
+    wordFrequencyUpdated,
     similarStoriesUpdated,
     originalStoryUpdated
   ) => {
     const selectedStory = dropdown.node().value;
     const selectedData = data.find((d) => d.title === selectedStory);
-    wordCloudUpdated && wordCloud.update(selectedData);
+    wordFrequencyUpdated && wordFrequency.update(selectedData);
     similarStoriesUpdated &&
       similarStories.update(
         selectedData,

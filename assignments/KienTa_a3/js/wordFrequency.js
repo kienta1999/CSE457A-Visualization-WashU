@@ -1,10 +1,10 @@
-class WordCloud {
+class WordFrequency {
   constructor() {
     this.width = 500;
     this.height = 500;
   }
 
-  update(data) {
+  updateWordCloud(data) {
     this.svg = d3
       .select("#word-cloud")
       .html("")
@@ -69,5 +69,14 @@ class WordCloud {
       })
       .on("end", draw)
       .start();
+  }
+
+  updateWordFrequency(data) {
+    console.log(data);
+  }
+
+  update(data) {
+    this.updateWordCloud(data);
+    this.updateWordFrequency(data);
   }
 }
