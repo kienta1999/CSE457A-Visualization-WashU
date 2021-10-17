@@ -1,3 +1,9 @@
 body {
   background-color: antiquewhite;
 }
+
+.highlighted {
+  stroke: #404040;
+  stroke-width: 3;
+  cursor: pointer;
+}

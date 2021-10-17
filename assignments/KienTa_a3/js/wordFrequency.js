@@ -1,7 +1,10 @@
 class WordFrequency {
-  constructor() {
+  constructor(data) {
     this.width = 500;
     this.height = 500;
+    this.heightWC = 160;
+    this.widthtWC = 1000;
+    this.allData = data;
   }
 
   updateWordCloud(data) {
@@ -71,12 +74,88 @@ class WordFrequency {
       .start();
   }
 
-  updateWordFrequency(data) {
+  updateWordCount(data) {
     console.log(data);
+    const vis = this;
+    this.svg = d3
+      .select("#word-count")
+      .html("")
+      .append("svg")
+      .attr("width", this.widthtWC)
+      .attr("height", this.heightWC);
+    //   .append("g")
+    //   .attr("transform", `translate(${this.height / 2},${this.width / 2})`);
+
+    let frequencies = data.word_frequency;
+    frequencies.sort((d1, d2) => -d1.frequency + d2.frequency);
+    frequencies = frequencies.slice(0, 10);
+    const paddingBottom = 60;
+
+    const rScale = d3
+      .scaleLinear()
+      .domain([0, d3.max(frequencies, (d) => d.frequency)])
+      .range([0, (this.heightWC - paddingBottom) / 2]);
+
+    const paddingSide = rScale(d3.max(frequencies, (d) => d.frequency));
+
+    const xScale = d3
+      .scaleLinear()
+      .domain([0, frequencies.length - 1])
+      .range([paddingSide, this.widthtWC - paddingSide]);
+
+    var colors = d3
+      .scaleLinear()
+      .domain([
+        d3.min(frequencies, (d) => d.frequency) / 2,
+        d3.max(frequencies, (d) => d.frequency),
+      ])
+      .range(["white", "#0040ff"]);
+
+    this.svg
+      .selectAll("circle")
+      .data(frequencies)
+      .enter()
+      .append("circle")
+      .attr("cx", (d, i) => xScale(i))
+      .attr("cy", (this.heightWC - paddingBottom) / 2)
+      .attr("r", (d) => rScale(d.frequency))
+      .attr("fill", (d) => colors(d.frequency))
+      .on("mouseover", (event) => {
+        event.target.classList.add("highlighted");
+        console.log(d3.select(event.target)._groups[0][0].__data__);
+
+        const selectedData = d3.select(event.target)._groups[0][0].__data__;
+        const ranking = frequencies.findIndex(
+          (d) => d.word == selectedData.word
+        );
+        console.log(vis.allData);
+        d3.select("#tootip").html(
+          `<p>Selected Word: ${selectedData.word}</p><p>Frequency: ${
+            selectedData.frequency
+          }</p><p>Rank: ${ranking + 1}</p>`
+        );
+      })
+      .on("mouseout", (event) => {
+        event.target.classList.remove("highlighted");
+      });
+
+    var bandScale = d3
+      .scaleBand()
+      .range([0, this.widthtWC])
+      .domain(frequencies.map((d) => d.word))
+      .padding(0.2);
+
+    this.svg
+      .append("g")
+      .attr(
+        "transform",
+        "translate(-2," + (this.heightWC - paddingBottom) + ")"
+      )
+      .call(d3.axisBottom(bandScale));
   }
 
   update(data) {
     this.updateWordCloud(data);
-    this.updateWordFrequency(data);
+    this.updateWordCount(data);
   }
 }

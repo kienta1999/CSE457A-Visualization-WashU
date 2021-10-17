@@ -61,6 +61,12 @@ class SimilarStories {
       .attr("fill", (d, i) => colors(d.score))
       .attr("height", (d) => vis.height - yScale(0))
       .attr("y", (d) => yScale(0))
+      .on("mouseover", (event) => {
+        event.target.classList.add("highlighted");
+      })
+      .on("mouseout", (event) => {
+        event.target.classList.remove("highlighted");
+      })
       .classed("similarity", true)
       .transition()
       .duration(900)
