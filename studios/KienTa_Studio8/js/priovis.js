@@ -127,7 +127,6 @@ PrioVis.prototype.updateVis = function () {
 
   // *** TO-DO ***
   // Update x-axis tick values to something more meaningful
-  console.log(this.metaData.choices);
   vis.svg
     .select(".x-axis")
     .call(vis.xAxis)
